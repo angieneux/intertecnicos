@@ -60,3 +60,5 @@ gem 'themify-icons-rails', git: 'https://github.com/nardonykolyszyn/themify-icon
 gem "solidus_auth_devise", "~> 2.4"
 
 gem "routing-filter", "~> 0.6.3"
+
+gem "rails-erd", "~> 1.6"
