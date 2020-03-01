@@ -48,11 +48,15 @@ group :development do
 end
 gem "hamlit", "~> 2.11"
 
-gem "html2haml", "~> 2.2"
-
 gem "bootstrap", "~> 4.4"
+gem "html2haml", "~> 2.2"
+gem "kaminari-i18n"
+gem "rails-i18n"
+gem "solidus_i18n"
 
 gem "solidus", "~> 2.10"
 gem 'themify-icons-rails', git: 'https://github.com/nardonykolyszyn/themify-icons-rails.git'
 
 gem "solidus_auth_devise", "~> 2.4"
+
+gem "routing-filter", "~> 0.6.3"
