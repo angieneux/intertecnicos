@@ -1,0 +1,473 @@
+%body
+  %section.hero-banner
+    .hero-wrapper
+      .hero-left
+        %h1.hero-title
+          Foods the
+          %br/
+          most precious things
+        .d-sm-flex.flex-wrap
+          %a.button.button-hero.button-shadow{:href => "#"} Book Now
+          %a.hero-banner__video{:href => "http://www.youtube.com/watch?v=0O2aH4XLbto"} Watch Video
+        %ul.hero-info.d-none.d-lg-block
+          %li
+            = image_tag('banner/fas-service-icon.png')
+            %h4 Fast Service
+          %li
+            = image_tag('banner/fresh-food-icon.png')
+            %h4 Fresh Food
+          %li
+            = image_tag('banner/support-icon.png')
+            %h4 24/7 Support
+      .hero-right
+        .owl-carousel.owl-theme.hero-carousel
+          .hero-carousel-item
+            = image_tag('banner/hero-banner1.png', class: 'img-fluid')
+          .hero-carousel-item
+            = image_tag('banner/hero-banner2.png', class: 'img-fluid')
+          .hero-carousel-item
+            = image_tag('banner/hero-banner1.png', class: 'img-fluid')
+          .hero-carousel-item
+            = image_tag('banner/hero-banner2.png', class: 'img-fluid')
+      %ul.social-icons.d-none.d-lg-block
+        %li
+          %a{:href => "#"}
+            %i.ti-facebook
+        %li
+          %a{:href => "#"}
+            %i.ti-twitter
+        %li
+          %a{:href => "#"}
+            %i.ti-instagram
+  / ================Hero Banner Section end =================
+  / ================About Section start =================
+  %section.about.section-margin.pb-xl-70
+    .container
+      .row
+        .col-md-6.col-xl-6.mb-5.mb-md-0.pb-5.pb-md-0
+          .img-styleBox
+            .styleBox-border
+              = image_tag('home/about-img1.png', class: 'img-fluid styleBox-img1')
+            = image_tag('home/about-img2.png', class: 'img-fluid styleBox-img2')
+        .col-md-6.pl-md-5.pl-xl-0.offset-xl-1.col-xl-5
+          .section-intro.mb-lg-4
+            %h4.intro-title About Us
+            %h2 We speak the good food language
+          %p Living first us creepeth she'd earth second be sixth hath likeness greater image said sixth was without male place fowl evening an grass form living fish and rule lesser for blessed can't saw third one signs moving stars light divided was two you him appear midst cattle for they are gathering.
+          %a.button.button-shadow.mt-2.mt-lg-4{:href => "#"} Learn More
+  / ================About Section End =================
+  / ================Featured Section Start =================
+  %section.section-margin.mb-lg-100
+    .container
+      .section-intro.mb-75px
+        %h4.intro-title Featured Food
+        %h2 Fresh taste and great price
+      .owl-carousel.owl-theme.featured-carousel
+        .featured-item
+          = image_tag('home/featured1.png', class: 'card-img rounded-0')
+          .item-body
+            %a{:href => "#"}
+              %h3 Mountain Mike Pizza
+            %p Whales and darkness moving
+            .d-flex.justify-content-between
+              %ul.rating-star
+                %li
+                  %i.ti-star
+                %li
+                  %i.ti-star
+                %li
+                  %i.ti-star
+                %li
+                  %i.ti-star
+                %li
+                  %i.ti-star
+              %h3.price-tag $35
+        .featured-item
+          = image_tag('home/featured2.png', class: 'card-img rounded-0')
+          .item-body
+            %a{:href => "#"}
+              %h3 Patatas Bravas
+            %p Whales and darkness moving
+            .d-flex.justify-content-between
+              %ul.rating-star
+                %li
+                  %i.ti-star
+                %li
+                  %i.ti-star
+                %li
+                  %i.ti-star
+                %li
+                  %i.ti-star
+                %li
+                  %i.ti-star
+              %h3.price-tag $30
+        .featured-item
+          = image_tag('home/featured3.png', class: 'card-img rounded-0')
+          .item-body
+            %a{:href => "#"}
+              %h3 Pulled Sandwich
+            %p Whales and darkness moving
+            .d-flex.justify-content-between
+              %ul.rating-star
+                %li
+                  %i.ti-star
+                %li
+                  %i.ti-star
+                %li
+                  %i.ti-star
+                %li
+                  %i.ti-star
+                %li
+                  %i.ti-star
+              %h3.price-tag $20
+        .featured-item
+          = image_tag('home/featured1.png', class: 'card-img rounded-0')
+          .item-body
+            %a{:href => "#"}
+              %h3 Mountain Mike Pizza
+            %p Whales and darkness moving
+            .d-flex.justify-content-between
+              %ul.rating-star
+                %li
+                  %i.ti-star
+                %li
+                  %i.ti-star
+                %li
+                  %i.ti-star
+                %li
+                  %i.ti-star
+                %li
+                  %i.ti-star
+              %h3.price-tag $35
+  / ================Featured Section End =================
+  / ================Offer Section Start =================
+  %section.bg-lightGray.section-padding
+    .container
+      .row.no-gutters
+        .col-sm
+          = image_tag('home/offer-img.png', class: 'card-img rounded-0')
+        .col-sm
+          .offer-card.offer-card-position
+            %h3 Italian Pizza Offer
+            %h2 50% OFF
+            %a.button{:href => "#"} Read More
+  / ================Offer Section End =================
+  / ================Food menu section start =================
+  %section.section-margin
+    .container
+      .section-intro.mb-75px
+        %h4.intro-title Food Menu
+        %h2 Delicious food
+      .row
+        .col-lg-6
+          .media.align-items-center.food-card
+            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
+            .media-body
+              .d-flex.justify-content-between.food-card-title
+                %h4 Roasted Marrow
+                %h3.price-tag $32
+              %p Whales and darkness moving form cattle
+        .col-lg-6
+          .media.align-items-center.food-card
+            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
+            .media-body
+              .d-flex.justify-content-between.food-card-title
+                %h4 Roasted Marrow
+                %h3.price-tag $32
+              %p Whales and darkness moving form cattle
+        .col-lg-6
+          .media.align-items-center.food-card
+            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
+            .media-body
+              .d-flex.justify-content-between.food-card-title
+                %h4 Roasted Marrow
+                %h3.price-tag $32
+              %p Whales and darkness moving form cattle
+        .col-lg-6
+          .media.align-items-center.food-card
+            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
+            .media-body
+              .d-flex.justify-content-between.food-card-title
+                %h4 Roasted Marrow
+                %h3.price-tag $32
+              %p Whales and darkness moving form cattle
+        .col-lg-6
+          .media.align-items-center.food-card
+            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
+            .media-body
+              .d-flex.justify-content-between.food-card-title
+                %h4 Roasted Marrow
+                %h3.price-tag $32
+              %p Whales and darkness moving form cattle
+        .col-lg-6
+          .media.align-items-center.food-card
+            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
+            .media-body
+              .d-flex.justify-content-between.food-card-title
+                %h4 Roasted Marrow
+                %h3.price-tag $32
+              %p Whales and darkness moving form cattle
+        .col-lg-6
+          .media.align-items-center.food-card
+            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
+            .media-body
+              .d-flex.justify-content-between.food-card-title
+                %h4 Roasted Marrow
+                %h3.price-tag $32
+              %p Whales and darkness moving form cattle
+        .col-lg-6
+          .media.align-items-center.food-card
+            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
+            .media-body
+              .d-flex.justify-content-between.food-card-title
+                %h4 Roasted Marrow
+                %h3.price-tag $32
+              %p Whales and darkness moving form cattle
+  / ================Food menu section end =================
+  / ================CTA section start =================
+  %section.cta-area.text-center
+    .container
+      %p Some Trendy And Popular Courses Offerd
+      %h2 Under replenish give saying thing
+      %a.button{:href => "#"} Reservation
+  / ================CTA section end =================
+  / ================Chef section start =================
+  %section.section-margin
+    .container
+      .section-intro.mb-75px
+        %h4.intro-title Our Chef
+        %h2 Talent &amp; experience member
+      .row
+        .col-sm-6.col-lg-4.mb-4.mb-lg-0
+          .chef-card
+            = image_tag('home/chef-1.png', class: 'card-img rounded-0')
+            .chef-footer
+              %h4 Daniesl Laran
+              %p Executive Chef
+            .chef-overlay
+              %ul.social-icons
+                %li
+                  %a{:href => "#"}
+                    %i.ti-facebook
+                %li
+                  %a{:href => "#"}
+                    %i.ti-twitter-alt
+                %li
+                  %a{:href => "#"}
+                    %i.ti-skype
+                %li
+                  %a{:href => "#"}
+                    %i.ti-vimeo-alt
+        .col-sm-6.col-lg-4.mb-4.mb-lg-0
+          .chef-card
+            = image_tag('home/chef-2.png', class: 'card-img rounded-0')
+            .chef-footer
+              %h4 Daniesl Laran
+              %p Executive Chef
+            .chef-overlay
+              %ul.social-icons
+                %li
+                  %a{:href => "#"}
+                    %i.ti-facebook
+                %li
+                  %a{:href => "#"}
+                    %i.ti-twitter-alt
+                %li
+                  %a{:href => "#"}
+                    %i.ti-skype
+                %li
+                  %a{:href => "#"}
+                    %i.ti-vimeo-alt
+        .col-sm-6.col-lg-4.mb-4.mb-lg-0
+          .chef-card
+            = image_tag('home/chef-3.png', class: 'card-img rounded-0')
+            .chef-footer
+              %h4 Daniesl Laran
+              %p Executive Chef
+            .chef-overlay
+              %ul.social-icons
+                %li
+                  %a{:href => "#"}
+                    %i.ti-facebook
+                %li
+                  %a{:href => "#"}
+                    %i.ti-twitter-alt
+                %li
+                  %a{:href => "#"}
+                    %i.ti-skype
+                %li
+                  %a{:href => "#"}
+                    %i.ti-vimeo-alt
+  / ================Chef section end =================
+  / ================Reservation section start =================
+  %section.bg-lightGray.section-padding
+    .container
+      .row.align-items-center
+        .col-md-6.col-xl-5.mb-4.mb-md-0
+          .section-intro
+            %h4.intro-title Reservation
+            %h2.mb-3 Get experience from sneaky
+          %p Him given and midst tree form seas she'd saw give evening one every make hath moveth you're appear female heaven had signs own days saw they're have let midst given him given and midst tree. Form seas she'd saw give evening
+        .col-md-6.offset-xl-2.col-xl-5
+          .search-wrapper
+            %h3 Book A Table
+            %form.search-form{:action => "#"}
+              .form-group
+                .input-group
+                  %input.form-control{:placeholder => "Your Name", :type => "text"}/
+                  .input-group-append
+                    %span.input-group-text
+                      %i.ti-user
+              .form-group
+                .input-group
+                  %input.form-control{:placeholder => "Email Address", :type => "text"}/
+                  .input-group-append
+                    %span.input-group-text
+                      %i.ti-email
+              .form-group
+                .input-group
+                  %input.form-control{:placeholder => "Phone Number", :type => "text"}/
+                  .input-group-append
+                    %span.input-group-text
+                      %i.ti-headphone-alt
+              .form-group
+                .input-group
+                  %input.form-control{:placeholder => "Select Date", :type => "text"}/
+                  .input-group-append
+                    %span.input-group-text
+                      %i.ti-notepad
+              .form-group
+                .input-group
+                  %input.form-control{:placeholder => "Select People", :type => "text"}/
+                  .input-group-append
+                    %span.input-group-text
+                      %i.ti-layout-column3
+              .form-group.form-group-position
+                %button.button.border-0{:type => "submit"} Make Reservation
+  / ================Reservation section end =================
+  / ================Blog section start =================
+  %section.section-margin
+    .container
+      .section-intro.mb-75px
+        %h4.intro-title Our Blog
+        %h2 Latest food and recipe news
+      .row
+        .col-sm-6.col-lg-4.mb-4.mb-lg-0
+          .card-blog
+            = image_tag('blog/blog1.png', class: 'card-img rounded-0')
+            .blog-body
+              %ul.blog-info
+                %li
+                  %a{:href => "#"} Admin post
+                %li
+                  %a{:href => "#"} Jan 10, 2019
+              %a{:href => "#"}
+                %h3 Huge cavity in antarctic glacie signals rapid
+        .col-sm-6.col-lg-4.mb-4.mb-lg-0
+          .card-blog
+            = image_tag('blog/blog2.png', class: 'card-img rounded-0')
+            .blog-body
+              %ul.blog-info
+                %li
+                  %a{:href => "#"} Admin post
+                %li
+                  %a{:href => "#"} Jan 10, 2019
+              %a{:href => "#"}
+                %h3
+                  Researcher unearths age
+                  in the desert
+        .col-sm-6.col-lg-4.mb-4.mb-lg-0
+          .card-blog
+            = image_tag('blog/blog3.png', class: 'card-img rounded-0')
+            .blog-body
+              %ul.blog-info
+                %li
+                  %a{:href => "#"} Admin post
+                %li
+                  %a{:href => "#"} Jan 10, 2019
+              %a{:href => "#"}
+                %h3
+                  High-protein rice brings
+                  value, nutrition
+  / ================Blog section end =================
+  / ================ start footer Area =================
+  %footer.footer-area.section-gap
+    .container
+      .row
+        .col-xl-2.col-sm-6.mb-4.mb-xl-0.single-footer-widget
+          %h4 Top Products
+          %ul
+            %li
+              %a{:href => "#"} Managed Website
+            %li
+              %a{:href => "#"} Manage Reputation
+            %li
+              %a{:href => "#"} Power Tools
+            %li
+              %a{:href => "#"} Marketing Service
+        .col-xl-2.col-sm-6.mb-4.mb-xl-0.single-footer-widget
+          %h4 Quick Links
+          %ul
+            %li
+              %a{:href => "#"} Jobs
+            %li
+              %a{:href => "#"} Brand Assets
+            %li
+              %a{:href => "#"} Investor Relations
+            %li
+              %a{:href => "#"} Terms of Service
+        .col-xl-2.col-sm-6.mb-4.mb-xl-0.single-footer-widget
+          %h4 Features
+          %ul
+            %li
+              %a{:href => "#"} Jobs
+            %li
+              %a{:href => "#"} Brand Assets
+            %li
+              %a{:href => "#"} Investor Relations
+            %li
+              %a{:href => "#"} Terms of Service
+        .col-xl-2.col-sm-6.mb-4.mb-xl-0.single-footer-widget
+          %h4 Resources
+          %ul
+            %li
+              %a{:href => "#"} Guides
+            %li
+              %a{:href => "#"} Research
+            %li
+              %a{:href => "#"} Experts
+            %li
+              %a{:href => "#"} Agencies
+        .col-xl-4.col-md-8.mb-4.mb-xl-0.single-footer-widget
+          %h4 Newsletter
+          %p You can trust us. we only send promo offers,
+          #mc_embed_signup.form-wrap
+            %form{:action => "https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&id=92a4423d01", :method => "get", :target => "_blank"}
+              .input-group
+                %input.form-control{:name => "EMAIL", :onblur => "this.placeholder = 'Your Email Address '", :onfocus => "this.placeholder = ''", :placeholder => "Your Email Address", :type => "email"}/
+                .input-group-append
+                  %button.btn.click-btn{:type => "submit"}
+                    %i.ti-arrow-right
+              %div{:style => "position: absolute; left: -5000px;"}
+                %input{:name => "b_36c4fd991d266f23781ded980_aefe40901a", :tabindex => "-1", :type => "text", :value => ""}/
+              .info
+      .footer-bottom.row.align-items-center.text-center.text-lg-left
+        %p.footer-text.m-0.col-lg-8.col-md-12
+          / Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+          Copyright ©
+          :javascript
+            document.write(new Date().getFullYear());
+          All rights reserved | This template is made with
+          %i.ti-heart{"aria-hidden" => "true"}
+          by
+          %a{:href => "https://colorlib.com", :target => "_blank"} Colorlib
+          / Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+        .col-lg-4.col-md-12.text-center.text-lg-right.footer-social
+          %a{:href => "#"}
+            %i.ti-facebook
+          %a{:href => "#"}
+            %i.ti-twitter-alt
+          %a{:href => "#"}
+            %i.ti-dribbble
+          %a{:href => "#"}
+            %i.ti-linkedin

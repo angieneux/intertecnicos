@@ -49,3 +49,7 @@ end
 gem "hamlit", "~> 2.11"
 
 gem "html2haml", "~> 2.2"
+
+gem "bootstrap", "~> 4.4"
+
+gem 'themify-icons-rails', git: 'https://github.com/nardonykolyszyn/themify-icons-rails.git'
