@@ -64,82 +64,26 @@
         %h4.intro-title Featured Food
         %h2 Tu próximo menú
       .owl-carousel.owl-theme.featured-carousel
-        .featured-item
-          = image_tag('home/featured1.png', class: 'card-img rounded-0')
-          .item-body
-            %a{:href => "#"}
-              %h3 Mountain Mike Pizza
-            %p Whales and darkness moving
-            .d-flex.justify-content-between
-              %ul.rating-star
-                %li
-                  %i.ti-star
-                %li
-                  %i.ti-star
-                %li
-                  %i.ti-star
-                %li
-                  %i.ti-star
-                %li
-                  %i.ti-star
-              %h3.price-tag $35
-        .featured-item
-          = image_tag('home/featured2.png', class: 'card-img rounded-0')
-          .item-body
-            %a{:href => "#"}
-              %h3 Patatas Bravas
-            %p Whales and darkness moving
-            .d-flex.justify-content-between
-              %ul.rating-star
-                %li
-                  %i.ti-star
-                %li
-                  %i.ti-star
-                %li
-                  %i.ti-star
-                %li
-                  %i.ti-star
-                %li
-                  %i.ti-star
-              %h3.price-tag $30
-        .featured-item
-          = image_tag('home/featured3.png', class: 'card-img rounded-0')
-          .item-body
-            %a{:href => "#"}
-              %h3 Pulled Sandwich
-            %p Whales and darkness moving
-            .d-flex.justify-content-between
-              %ul.rating-star
-                %li
-                  %i.ti-star
-                %li
-                  %i.ti-star
-                %li
-                  %i.ti-star
-                %li
-                  %i.ti-star
-                %li
-                  %i.ti-star
-              %h3.price-tag $20
-        .featured-item
-          = image_tag('home/featured1.png', class: 'card-img rounded-0')
-          .item-body
-            %a{:href => "#"}
-              %h3 Mountain Mike Pizza
-            %p Whales and darkness moving
-            .d-flex.justify-content-between
-              %ul.rating-star
-                %li
-                  %i.ti-star
-                %li
-                  %i.ti-star
-                %li
-                  %i.ti-star
-                %li
-                  %i.ti-star
-                %li
-                  %i.ti-star
-              %h3.price-tag $35
+        - @top_products.each do |product|
+          .featured-item
+            = image_tag(product.images.first.attachment.url, class: 'card-img rounded-0 product-featured')
+            .item-body
+              %a{:href => "#"}
+                %h3= product.name
+              %p= product.description
+              .d-flex.justify-content-between
+                %ul.rating-star
+                  %li
+                    %i.ti-star
+                  %li
+                    %i.ti-star
+                  %li
+                    %i.ti-star
+                  %li
+                    %i.ti-star
+                  %li
+                    %i.ti-star
+                %h3.price-tag= format_price(product.prices.first.amount)
   / ================Featured Section End =================
   / ================Offer Section Start =================
   %section.bg-lightGray.section-padding

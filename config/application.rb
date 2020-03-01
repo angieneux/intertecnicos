@@ -18,7 +18,6 @@ Bundler.require(*Rails.groups)
 
 module Kucina
   class Application < Rails::Application
-        # Load application's model / class decorators
     initializer 'spree.decorators' do |app|
       config.to_prepare do
         Dir.glob(Rails.root.join('app/**/*_decorator*.rb')) do |path|
@@ -26,6 +25,8 @@ module Kucina
         end
       end
     end
+
+    config.i18n.default_locale = :es
 
     # Load application's view overrides
     initializer 'spree.overrides' do |app|
