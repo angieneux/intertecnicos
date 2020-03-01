@@ -35,6 +35,7 @@ gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem "rails-erd", "~> 1.6"
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
@@ -59,6 +60,5 @@ gem 'themify-icons-rails', git: 'https://github.com/nardonykolyszyn/themify-icon
 
 gem "solidus_auth_devise", "~> 2.4"
 
+gem "paper_trail", "~> 10.3"
 gem "routing-filter", "~> 0.6.3"
-
-gem "rails-erd", "~> 1.6"
