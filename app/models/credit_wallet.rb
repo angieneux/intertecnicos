@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Wallet < ApplicationRecord
+class CreditWallet < ApplicationRecord
   ## Changes versioning
   has_paper_trail
   ## Associations

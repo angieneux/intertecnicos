@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-class CreateWallets < ActiveRecord::Migration[5.1]
+class CreateCreditWallets < ActiveRecord::Migration[5.1]
   def change
-    create_table :wallets do |t|
+    create_table :credit_wallets do |t|
       t.float :balance
       t.belongs_to :spree_user, foreign_key: true, index: true
 
