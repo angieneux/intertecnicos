@@ -2,7 +2,7 @@
 
 Spree::User.class_eval do
   ## Callbacks
-  before_save :assign_unique_credit_wallet
+  # before_save :assign_unique_credit_wallet
   ## Associations
   has_one :credit_wallet, foreign_key: :spree_user_id
 
