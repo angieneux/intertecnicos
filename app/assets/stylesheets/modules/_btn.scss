@@ -9,10 +9,10 @@
   padding: 9px 25px;
   text-transform: capitalize;
   @include transition;
-  
+
 
   @media(min-width: 600px){
-    padding: 12px 45px;    
+    padding: 12px 45px;
   }
 
   &:hover{
@@ -36,7 +36,7 @@
 }
 
 .button-shadow{
-  box-shadow: -5px 8px 20px 0px rgba(229, 16, 2, 0.15); 
+  box-shadow: -5px 8px 20px 0px rgba(229, 16, 2, 0.15);
 }
 
 button.button{
@@ -45,6 +45,18 @@ button.button{
 
 .button-contactForm{
   border-radius: 5px;
+}
+
+
+.button-lite{
+  padding: 5px 15vw;
+  margin-top: 13px;
+
+  @media(min-width: 600px){
+    padding: 5px 4vw;
+  }
+
+
 }
 
 /*=================== custom button rule end ====================*/

@@ -41,126 +41,50 @@
           %a{:href => "#"}
             %i.ti-instagram
   / ================Hero Banner Section end =================
-
-
-
+  / ================About Section start =================
+  %section.about.section-margin.pb-xl-70
+    .container
+      .row
+        .col-md-6.col-xl-6.mb-5.mb-md-0.pb-5.pb-md-0
+          .img-styleBox
+            .styleBox-border
+              = image_tag('home/about-img1.png', class: 'img-fluid styleBox-img1')
+            = image_tag('home/about-img2.png', class: 'img-fluid styleBox-img2')
+        .col-md-6.pl-md-5.pl-xl-0.offset-xl-1.col-xl-5
+          .section-intro.mb-lg-4
+            %h4.intro-title About Us
+            %h2 We speak the good food language
+          %p Living first us creepeth she'd earth second be sixth hath likeness greater image said sixth was without male place fowl evening an grass form living fish and rule lesser for blessed can't saw third one signs moving stars light divided was two you him appear midst cattle for they are gathering.
+          %a.button.button-shadow.mt-2.mt-lg-4{:href => "#"} Learn More
+  / ================About Section End =================
   / ================Featured Section Start =================
   %section.section-margin.mb-lg-100
     .container
-      .section-intro.mb-75px{ style: "max-width: 100%"}
-        %h4.intro-title ¿Como Funciona?
-        %h2 En solo 3 simples pasos
-      .row{ style: "text-align: center;"}
-        .col-md-4.col-sm-12
-          .food-card
-            .header
-              =image_tag("banner/selectFood.svg", width: "30%", )
-            .body{ style: 'margin-top: 20px;'}
-              %h4= 'Selecciona'
-              %p Lorem Lor Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ipsum...
-        .col-md-4.col-sm-12
-          .food-card
-            .header
-              =image_tag("banner/addressfood.svg", width: "30%", )
-            .body{ style: 'margin-top: 20px;'}
-              %h4= 'Ingresa tu dirección'
-              %p Lorem Lor Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ipsum...
-        .col-md-4.col-sm-12
-          .food-card
-            .header
-              =image_tag("banner/buyFood.svg", width: "30%", )
-            .body{ style: 'margin-top: 20px;'}
-              %h4= 'Ordena'
-              %p Lorem Lor Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ipsum...
-
-
-
-
-
-  / ================Featured Section End =================
-
-
-  / ================Food menu section start =================
-  %section.section-margin
-    .container
       .section-intro.mb-75px
-        %h4.intro-title Menu
-        %h2 De la Semana
-      .row
-        .col-lg-4.col-sm-6
-          .media.align-items-center.food-card
-            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
-            .media-body
-              .d-flex.justify-content-between.food-card-title
-                %h4 Roasted Marrow
-                %h3.price-tag $32
-              %p Whales and darkness moving form cattle
-              %a.button.button-lite{:href => "#"} Ordenar
-        .col-lg-4.col-sm-6
-          .media.align-items-center.food-card
-            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
-            .media-body
-              .d-flex.justify-content-between.food-card-title
-                %h4 Roasted Marrow
-                %h3.price-tag $32
-              %p Whales and darkness moving form cattle
-              %a.button.button-lite{:href => "#"} Ordenar
-        .col-lg-4.col-sm-6
-          .media.align-items-center.food-card
-            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
-            .media-body
-              .d-flex.justify-content-between.food-card-title
-                %h4 Roasted Marrow
-                %h3.price-tag $32
-              %p Whales and darkness moving form cattle
-              %a.button.button-lite{:href => "#"} Ordenar
-        .col-lg-4.col-sm-6
-          .media.align-items-center.food-card
-            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
-            .media-body
-              .d-flex.justify-content-between.food-card-title
-                %h4 Roasted Marrow
-                %h3.price-tag $32
-              %p Whales and darkness moving form cattle
-              %a.button.button-lite{:href => "#"} Ordenar
-        .col-lg-4.col-sm-6
-          .media.align-items-center.food-card
-            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
-            .media-body
-              .d-flex.justify-content-between.food-card-title
-                %h4 Roasted Marrow
-                %h3.price-tag $32
-              %p Whales and darkness moving form cattle
-              %a.button.button-lite{:href => "#"} Ordenar
-        .col-lg-4.col-sm-6
-          .media.align-items-center.food-card
-            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
-            .media-body
-              .d-flex.justify-content-between.food-card-title
-                %h4 Roasted Marrow
-                %h3.price-tag $32
-              %p Whales and darkness moving form cattle
-              %a.button.button-lite{:href => "#"} Ordenar
-        .col-lg-4.col-sm-6
-          .media.align-items-center.food-card
-            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
-            .media-body
-              .d-flex.justify-content-between.food-card-title
-                %h4 Roasted Marrow
-                %h3.price-tag $32
-              %p Whales and darkness moving form cattle
-              %a.button.button-lite{:href => "#"} Ordenar
-        .col-lg-4.col-sm-6
-          .media.align-items-center.food-card
-            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
-            .media-body
-              .d-flex.justify-content-between.food-card-title
-                %h4 Roasted Marrow
-                %h3.price-tag $32
-              %p Whales and darkness moving form cattle
-              %a.button.button-lite{:href => "#"} Ordenar
-  / ================Food menu section end =================
-
+        %h4.intro-title Featured Food
+        %h2 Tu próximo menú
+      .owl-carousel.owl-theme.featured-carousel
+        - @top_products.each do |product|
+          .featured-item
+            = image_tag(product.images.first.attachment.url, class: 'card-img rounded-0 product-featured')
+            .item-body
+              %a{:href => "#"}
+                %h3= product.name
+              %p= product.description
+              .d-flex.justify-content-between
+                %ul.rating-star
+                  %li
+                    %i.ti-star
+                  %li
+                    %i.ti-star
+                  %li
+                    %i.ti-star
+                  %li
+                    %i.ti-star
+                  %li
+                    %i.ti-star
+                %h3.price-tag= format_price(product.prices.first.amount)
+  / ================Featured Section End =================
   / ================Offer Section Start =================
   %section.bg-lightGray.section-padding
     .container
@@ -174,8 +98,78 @@
             %h3 en descuento mensual
             %a.button{:href => "#"} Comprar ya
   / ================Offer Section End =================
-
-
+  / ================Food menu section start =================
+  %section.section-margin
+    .container
+      .section-intro.mb-75px
+        %h4.intro-title Food Menu
+        %h2 Delicious food
+      .row
+        .col-lg-6
+          .media.align-items-center.food-card
+            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
+            .media-body
+              .d-flex.justify-content-between.food-card-title
+                %h4 Roasted Marrow
+                %h3.price-tag $32
+              %p Whales and darkness moving form cattle
+        .col-lg-6
+          .media.align-items-center.food-card
+            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
+            .media-body
+              .d-flex.justify-content-between.food-card-title
+                %h4 Roasted Marrow
+                %h3.price-tag $32
+              %p Whales and darkness moving form cattle
+        .col-lg-6
+          .media.align-items-center.food-card
+            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
+            .media-body
+              .d-flex.justify-content-between.food-card-title
+                %h4 Roasted Marrow
+                %h3.price-tag $32
+              %p Whales and darkness moving form cattle
+        .col-lg-6
+          .media.align-items-center.food-card
+            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
+            .media-body
+              .d-flex.justify-content-between.food-card-title
+                %h4 Roasted Marrow
+                %h3.price-tag $32
+              %p Whales and darkness moving form cattle
+        .col-lg-6
+          .media.align-items-center.food-card
+            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
+            .media-body
+              .d-flex.justify-content-between.food-card-title
+                %h4 Roasted Marrow
+                %h3.price-tag $32
+              %p Whales and darkness moving form cattle
+        .col-lg-6
+          .media.align-items-center.food-card
+            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
+            .media-body
+              .d-flex.justify-content-between.food-card-title
+                %h4 Roasted Marrow
+                %h3.price-tag $32
+              %p Whales and darkness moving form cattle
+        .col-lg-6
+          .media.align-items-center.food-card
+            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
+            .media-body
+              .d-flex.justify-content-between.food-card-title
+                %h4 Roasted Marrow
+                %h3.price-tag $32
+              %p Whales and darkness moving form cattle
+        .col-lg-6
+          .media.align-items-center.food-card
+            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
+            .media-body
+              .d-flex.justify-content-between.food-card-title
+                %h4 Roasted Marrow
+                %h3.price-tag $32
+              %p Whales and darkness moving form cattle
+  / ================Food menu section end =================
   / ================CTA section start =================
   %section.cta-area.text-center
     .container
@@ -183,9 +177,6 @@
       %h2 Almuerzos Gourment al mejor precio
       %a.button{:href => "#"} Elegir comida
   / ================CTA section end =================
-
-
-
   / ================Reservation section start =================
   %section.bg-lightGray.section-padding
     .container
