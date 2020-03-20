@@ -73,10 +73,6 @@
               %h4= 'Ordena'
               %p Lorem Lor Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ipsum...
 
-
-
-
-
   / ================Featured Section End =================
 
 
@@ -220,5 +216,18 @@
               .form-group.form-group-position
                 %button.button.border-0{:type => "submit"} Subscribirme
   / ================Reservation section end =================
+
+
   / ================ start footer Area =================
+  = render 'layouts/customers/modal'
   = render 'layouts/customers/footer'
+
+
+:javascript
+  $(document).ready(function(){
+
+    $('.food-card').click(function(){
+      $('#exampleModalCenter').modal('show')
+    })
+
+  })

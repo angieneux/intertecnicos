@@ -49,38 +49,22 @@ button.button{
 
 
 .button-lite{
-  padding: 5px 15vw;
+  padding: 5px 4vw;
   margin-top: 13px;
 
-  @media(min-width: 600px){
-    padding: 5px 4vw;
-  }
-
+   @media(600px){
+	.button-lite{
+  padding: 5px 4vw;
+  margin-top: 13px;
 
 }
-
-.button-invert {
-    background: #fff;
-    color: #ee0d51;
-    border: solid 1px;
-}
-
-
-.button-category{
-  padding: 0 5px;
-  margin: 0;
-  margin-right: 10px;
-}
-
-
-.btn-product{
-  position: relative;
-  bottom: 0;
-
-  @media(min-width: 600px){
-    position: absolute;
-  }
+	
+    }
 
 }
 
 /*=================== custom button rule end ====================*/
+ @media(min-width: 600px){
+    padding: 12px 45px;
+  }
+

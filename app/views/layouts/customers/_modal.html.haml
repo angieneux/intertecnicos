@@ -1,0 +1,109 @@
+/ Modal
+#exampleModalCenter.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "exampleModalCenterTitle", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog.modal-dialog-centered.modal-lg{:role => "document"}
+    .modal-content
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+      .modal-body
+        .row
+          .col-md-4.text-center
+            = image_tag('banner/hero-banner1.png', width: '100%')
+          .col-md-8
+            %h4#exampleModalLongTitle.modal-title{style: 'margin-bottom: 30px;'} Roasted Marrow
+            %ul.hero-info.d-none.d-lg-block{ style: "padding: 0; margin-bottom: 30px;"}
+              %li
+                = image_tag('banner/health.svg', width: '30px')
+              %li
+                = image_tag('banner/steak.svg', width: '30px')
+            %ul{ style: "padding: 0; margin-bottom: 30px; display: flex;"}
+              %li
+                %a.button.button-lite.button-category.button-invert{:href => "#"} Pastas
+              %li
+                %a.button.button-lite.button-category.button-invert{:href => "#"} Carnes
+              %li
+                %a.button.button-lite.button-category.button-invert{:href => "#"} Sin gluten
+              %li
+                %a.button.button-lite.button-category.button-invert{:href => "#"} Sin lacteos
+
+            .row
+              .col-md-6
+                %span{:style => "text-decoration:line-through;"} $ 42.000
+                %h3.price-tag{ style: "padding: 0;margin-top: 7px;display: flex;align-self: center;"} $ 32.000
+              .col-md-6
+                %button.button.button-lite.btn-product{:type => "button", style: 'margin: 0;'} Ordenar
+          .col-md-12{ style: "margin-top: 40px;padding-bottom: 30px;"}
+            %ul#myTab.nav.nav-tabs{:role => "tablist"}
+              %li.nav-item
+                %a#home-tab.nav-link.active{"aria-controls" => "home", "aria-selected" => "true", "data-toggle" => "tab", :href => "#home", :role => "tab"} Descripción
+              %li.nav-item
+                %a#profile-tab.nav-link{"aria-controls" => "profile", "aria-selected" => "false", "data-toggle" => "tab", :href => "#profile", :role => "tab"} Ingredientes
+              %li.nav-item
+                %a#contact-tab.nav-link{"aria-controls" => "contact", "aria-selected" => "false", "data-toggle" => "tab", :href => "#contact", :role => "tab"} Información Nutricional
+            #myTabContent.tab-content
+              #home.tab-pane.fade.show.active{"aria-labelledby" => "home-tab", :role => "tabpanel"}
+                Raw denim you
+                probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master
+                cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro
+                keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip
+                placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi
+                qui.
+              #profile.tab-pane.fade{"aria-labelledby" => "profile-tab", :role => "tabpanel"}
+                Food truck fixie
+                locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit,
+                blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee.
+                Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum
+                PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS
+                salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit,
+                sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester
+                stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.
+              #contact.tab-pane.fade{"aria-labelledby" => "contact-tab", :role => "tabpanel"}
+                Etsy mixtape
+                wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack
+                lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard
+                locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify
+                squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie
+                etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog
+                stumptown. Pitchfork sustainable tofu synth chambray yr.
+
+
+
+:css
+  .nav-tabs {
+    border-bottom: #fff;
+    margin-bottom: 20px;
+  }
+
+
+
+  .nav-link.active {
+
+      color: #fff !important;
+      background-color: #ee0d51 !important;
+      border-color: #ee0d51 !important;
+      border-radius: 50px;
+      font-weight: 900;
+
+  }
+
+
+  .nav-tabs .nav-link:focus, .nav-tabs .nav-link {
+
+      color: #898989;
+
+  }
+
+  .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+
+      border-color: #e9ecef #e9ecef #dee2e6;
+      border-radius: 50px;
+
+  }
+
+
+  #myTabContent {
+
+      text-align: justify;
+      padding: 0 12px;
+
+  }
