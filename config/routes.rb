@@ -5,5 +5,7 @@ Rails.application.routes.draw do
 
   mount Spree::Core::Engine, at: '/menu'
 
+  get '/profile', to: 'profile#index'
+
   root 'home#index'
 end
