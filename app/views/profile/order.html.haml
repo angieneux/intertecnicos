@@ -1,0 +1,215 @@
+= stylesheet_link_tag "order"
+= render 'layouts/customers/header'
+%body
+
+  / ================Featured Section Start =================
+  %section.section-margin.mb-lg-100
+    .container
+      .section-intro.mb-75px{ style: "max-width: 100%"}
+        %h4.intro-title Selecciona
+        %h2 Tus dias de entrega
+    .row{ style: "text-align: center;"}
+      .col-sm-2
+        %h2 <
+
+      .col-sm-8
+        %div{style: 'display:flex; flex-wrap: wrap;'}
+          .food-card.date-day
+            .header
+              %h3 25
+            .body{ style: 'margin-top: 20px;'}
+              %h4= 'Lunes'
+          .food-card.date-day
+            .header
+              %h3 26
+            .body{ style: 'margin-top: 20px;'}
+              %h4= 'Martes'
+          .food-card.date-day
+            .header
+              %h3 27
+            .body{ style: 'margin-top: 20px;'}
+              %h4= 'Miercoles'
+          .food-card.date-day
+            .header
+              %h3 28
+            .body{ style: 'margin-top: 20px;'}
+              %h4= 'Jueves'
+          .food-card.date-day
+            .header
+              %h3 29
+            .body{ style: 'margin-top: 20px;'}
+              %h4= 'Viernes'
+          .food-card.date-day
+            .header
+              %h3 30
+            .body{ style: 'margin-top: 20px;'}
+              %h4= 'Sabado'
+          .food-card.date-day
+            .header
+              %h3 31
+            .body{ style: 'margin-top: 20px;'}
+              %h4= 'Domingo'
+
+      .col-sm-2
+        %h2 >
+
+
+
+  / ================Featured Section End =================
+
+
+  / ================Food menu section start =================
+  %section.section-margin
+    .container
+      .section-intro.mb-75px
+        %h4.intro-title Menu
+        %h2 De la Semana
+      .row
+        .col-lg-4.col-sm-6
+          .media.align-items-center.food-card
+            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
+            .media-body
+              .d-flex.justify-content-between.food-card-title
+                %h4 Roasted Marrow
+                %h3.price-tag $32
+              %p Whales and darkness moving form cattle
+              %a.button.button-lite{:href => "#"} Ordenar
+        .col-lg-4.col-sm-6
+          .media.align-items-center.food-card
+            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
+            .media-body
+              .d-flex.justify-content-between.food-card-title
+                %h4 Roasted Marrow
+                %h3.price-tag $32
+              %p Whales and darkness moving form cattle
+              %a.button.button-lite{:href => "#"} Ordenar
+        .col-lg-4.col-sm-6
+          .media.align-items-center.food-card
+            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
+            .media-body
+              .d-flex.justify-content-between.food-card-title
+                %h4 Roasted Marrow
+                %h3.price-tag $32
+              %p Whales and darkness moving form cattle
+              %a.button.button-lite{:href => "#"} Ordenar
+        .col-lg-4.col-sm-6
+          .media.align-items-center.food-card
+            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
+            .media-body
+              .d-flex.justify-content-between.food-card-title
+                %h4 Roasted Marrow
+                %h3.price-tag $32
+              %p Whales and darkness moving form cattle
+              %a.button.button-lite{:href => "#"} Ordenar
+        .col-lg-4.col-sm-6
+          .media.align-items-center.food-card
+            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
+            .media-body
+              .d-flex.justify-content-between.food-card-title
+                %h4 Roasted Marrow
+                %h3.price-tag $32
+              %p Whales and darkness moving form cattle
+              %a.button.button-lite{:href => "#"} Ordenar
+        .col-lg-4.col-sm-6
+          .media.align-items-center.food-card
+            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
+            .media-body
+              .d-flex.justify-content-between.food-card-title
+                %h4 Roasted Marrow
+                %h3.price-tag $32
+              %p Whales and darkness moving form cattle
+              %a.button.button-lite{:href => "#"} Ordenar
+        .col-lg-4.col-sm-6
+          .media.align-items-center.food-card
+            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
+            .media-body
+              .d-flex.justify-content-between.food-card-title
+                %h4 Roasted Marrow
+                %h3.price-tag $32
+              %p Whales and darkness moving form cattle
+              %a.button.button-lite{:href => "#"} Ordenar
+        .col-lg-4.col-sm-6
+          .media.align-items-center.food-card
+            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
+            .media-body
+              .d-flex.justify-content-between.food-card-title
+                %h4 Roasted Marrow
+                %h3.price-tag $32
+              %p Whales and darkness moving form cattle
+              %a.button.button-lite{:href => "#"} Ordenar
+  / ================Food menu section end =================
+
+  / ================Offer Section Start =================
+  %section.bg-lightGray.section-padding
+    .container
+      .row.no-gutters
+        .col-sm
+          = image_tag('home/offer-img.png', class: 'card-img rounded-0')
+        .col-sm
+          .offer-card.offer-card-position
+            %h3 Ahorra hasta
+            %h2 50%
+            %h3 en descuento mensual
+            %a.button{:href => "#"} Comprar ya
+  / ================Offer Section End =================
+
+
+  / ================CTA section start =================
+  %section.cta-area.text-center
+    .container
+      %p Olvídate de llevar los tuppers a la oficina
+      %h2 Almuerzos Gourment al mejor precio
+      %a.button{:href => "#"} Elegir comida
+  / ================CTA section end =================
+
+
+
+  / ================Reservation section start =================
+  %section.bg-lightGray.section-padding
+    .container
+      .row.align-items-center
+        .col-md-6.col-xl-5.mb-4.mb-md-0
+          .section-intro
+            %h4.intro-title Ofertas y Descuentos
+            %h2.mb-3 Mantente conectado
+          %p Recibe nuestra últimas promociones y noticias acerca de lo que estamos cocinado para ti, al subscribirte recibe un código de descuento único por un 20% en tus compras.
+        .col-md-6.offset-xl-2.col-xl-5
+          .search-wrapper
+            %h3 Newsletter
+            %form.search-form{:action => "#"}
+              .form-group
+                .input-group
+                  %input.form-control{:placeholder => "Your Name", :type => "text"}/
+                  .input-group-append
+                    %span.input-group-text
+                      %i.ti-user
+              .form-group
+                .input-group
+                  %input.form-control{:placeholder => "Email Address", :type => "text"}/
+                  .input-group-append
+                    %span.input-group-text
+                      %i.ti-email
+              .form-group
+                .input-group
+                  %input.form-control{:placeholder => "Phone Number", :type => "text"}/
+                  .input-group-append
+                    %span.input-group-text
+                      %i.ti-headphone-alt
+              .form-group.form-group-position
+                %button.button.border-0{:type => "submit"} Subscribirme
+  / ================Reservation section end =================
+
+
+  / ================ start footer Area =================
+  = render 'layouts/customers/modal'
+  = render 'layouts/customers/footer'
+
+
+:javascript
+  $(document).ready(function(){
+
+    $('.food-card').click(function(){
+      $('#exampleModalCenter').modal('show')
+    })
+
+  })
