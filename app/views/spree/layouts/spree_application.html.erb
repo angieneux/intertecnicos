@@ -20,7 +20,7 @@
         <%= render partial: 'spree/shared/sidebar' if content_for? :sidebar %>
 
         <div id="content" class="columns <%= !content_for?(:sidebar) ? "sixteen" : "twelve omega" %>" data-hook>
-          <%= flash_messages %> flass?
+          <%= flash_messages %> 
           <%= yield %>
         </div>
 

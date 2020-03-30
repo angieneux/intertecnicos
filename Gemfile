@@ -62,3 +62,4 @@ gem "solidus_auth_devise", "~> 2.4"
 
 gem "paper_trail", "~> 10.3"
 gem "routing-filter", "~> 0.6.3"
+gem 'hirb'

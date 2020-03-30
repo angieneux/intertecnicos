@@ -2,6 +2,6 @@
 
 class HomeController < ApplicationController
   def index
-    @top_products = Spree::Product.limit(6)
+    @top_products = Spree::Product.last(6)
   end
 end

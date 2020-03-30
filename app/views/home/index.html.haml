@@ -83,78 +83,19 @@
         %h4.intro-title Menu
         %h2 De la Semana
       .row
-        .col-lg-4.col-sm-6
-          .media.align-items-center.food-card
-            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
-            .media-body
-              .d-flex.justify-content-between.food-card-title
-                %h4 Roasted Marrow
-                %h3.price-tag $32
-              %p Whales and darkness moving form cattle
-              %a.button.button-lite{:href => "#"} Ordenar
-        .col-lg-4.col-sm-6
-          .media.align-items-center.food-card
-            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
-            .media-body
-              .d-flex.justify-content-between.food-card-title
-                %h4 Roasted Marrow
-                %h3.price-tag $32
-              %p Whales and darkness moving form cattle
-              %a.button.button-lite{:href => "#"} Ordenar
-        .col-lg-4.col-sm-6
-          .media.align-items-center.food-card
-            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
-            .media-body
-              .d-flex.justify-content-between.food-card-title
-                %h4 Roasted Marrow
-                %h3.price-tag $32
-              %p Whales and darkness moving form cattle
-              %a.button.button-lite{:href => "#"} Ordenar
-        .col-lg-4.col-sm-6
-          .media.align-items-center.food-card
-            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
-            .media-body
-              .d-flex.justify-content-between.food-card-title
-                %h4 Roasted Marrow
-                %h3.price-tag $32
-              %p Whales and darkness moving form cattle
-              %a.button.button-lite{:href => "#"} Ordenar
-        .col-lg-4.col-sm-6
-          .media.align-items-center.food-card
-            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
-            .media-body
-              .d-flex.justify-content-between.food-card-title
-                %h4 Roasted Marrow
-                %h3.price-tag $32
-              %p Whales and darkness moving form cattle
-              %a.button.button-lite{:href => "#"} Ordenar
-        .col-lg-4.col-sm-6
-          .media.align-items-center.food-card
-            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
-            .media-body
-              .d-flex.justify-content-between.food-card-title
-                %h4 Roasted Marrow
-                %h3.price-tag $32
-              %p Whales and darkness moving form cattle
-              %a.button.button-lite{:href => "#"} Ordenar
-        .col-lg-4.col-sm-6
-          .media.align-items-center.food-card
-            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
-            .media-body
-              .d-flex.justify-content-between.food-card-title
-                %h4 Roasted Marrow
-                %h3.price-tag $32
-              %p Whales and darkness moving form cattle
-              %a.button.button-lite{:href => "#"} Ordenar
-        .col-lg-4.col-sm-6
-          .media.align-items-center.food-card
-            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
-            .media-body
-              .d-flex.justify-content-between.food-card-title
-                %h4 Roasted Marrow
-                %h3.price-tag $32
-              %p Whales and darkness moving form cattle
-              %a.button.button-lite{:href => "#"} Ordenar
+        - if @top_products.any?
+          .row
+            - @top_products.each do |product|
+              .col-lg-4.col-sm-6
+                .media.align-items-center.food-card
+                  = image_tag(product.display_image.attachment(:small), class: 'mr-3 mr-sm-4 img-responsive')
+                  .media-body
+                    .d-flex.justify-content-between.food-card-title
+                      %h4= "#{product.name}"
+                      %h3.price-tag= "#{product.display_price}"
+                    %p= "#{product.description.slice(0,50)}"
+                    %a.button.button-lite{:href => "#"} Ordenar
+
   / ================Food menu section end =================
 
   / ================Offer Section Start =================
@@ -216,6 +157,7 @@
               .form-group.form-group-position
                 %button.button.border-0{:type => "submit"} Subscribirme
   / ================Reservation section end =================
+
 
 
   / ================ start footer Area =================
