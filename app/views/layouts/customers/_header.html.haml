@@ -16,3 +16,13 @@
               %a.nav-link{:href => "about.html"} ¿Cómo funciona?
             %li.nav-item
               %a.nav-link{:href => "menu.html"} Prepara tu Menú
+            %li.nav-item
+              %a.nav-link{:href => "menu.html"} Prepara tu Menú
+            %li.nav-item{style: 'display: flex;'}
+              - if customer_signed_in?
+                = link_to 'Salir', destroy_customer_session_path , method: :delete , class: 'button button-lite', style: 'align-self: center; margin: 0;'
+              - else
+                = link_to 'Iniciar', new_customer_session_path , class: 'button button-lite', style: 'align-self: center; margin: 0;'
+            - if !customer_signed_in?    
+              %li.nav-item{style: 'display: flex;'}
+                = link_to 'Registrarme', new_customer_registration_path , class: 'button button-invert button-lite', style: 'align-self: center; margin: 0;'
