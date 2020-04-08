@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200302003941) do
+ActiveRecord::Schema.define(version: 20200408151357) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "credit_payments", force: :cascade do |t|
     t.integer "credit_wallet_id"
@@ -25,6 +28,21 @@ ActiveRecord::Schema.define(version: 20200302003941) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["spree_user_id"], name: "index_credit_wallets_on_spree_user_id"
+  end
+
+  create_table "customers", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string "firstname"
+    t.string "profile_photo"
+    t.string "cellphone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_customers_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -834,7 +852,7 @@ ActiveRecord::Schema.define(version: 20200302003941) do
     t.index ["deleted_at"], name: "index_spree_stock_items_on_deleted_at"
     t.index ["stock_location_id", "variant_id"], name: "stock_item_by_loc_and_var_id"
     t.index ["stock_location_id"], name: "index_spree_stock_items_on_stock_location_id"
-    t.index ["variant_id", "stock_location_id"], name: "index_spree_stock_items_on_variant_id_and_stock_location_id", unique: true, where: "deleted_at is null"
+    t.index ["variant_id", "stock_location_id"], name: "index_spree_stock_items_on_variant_id_and_stock_location_id", unique: true, where: "(deleted_at IS NULL)"
   end
 
   create_table "spree_stock_locations", force: :cascade do |t|
@@ -1179,10 +1197,10 @@ ActiveRecord::Schema.define(version: 20200302003941) do
 
   create_table "versions", force: :cascade do |t|
     t.string "item_type", null: false
-    t.integer "item_id", limit: 8, null: false
+    t.bigint "item_id", null: false
     t.string "event", null: false
     t.string "whodunnit"
-    t.text "object", limit: 1073741823
+    t.text "object"
     t.datetime "created_at"
     t.index ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
   end
