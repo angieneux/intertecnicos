@@ -1,0 +1,113 @@
+= stylesheet_link_tag "profile"
+.login-reg-panel
+  .login-info-box
+    %h2{ style: 'color: #fff;'} ¿Ya tiene cuenta?
+    %p Conoce nuestras nuevas ofertas
+    %label#label-register{:for => "log-reg-show"} Ingresa
+    %input#log-reg-show{:checked => "checked", :name => "active-log-panel", :type => "radio"}
+  .register-info-box
+    %h2{ style: 'color: #fff;'} ¿No tienes cuenta?
+    %p !Crea una cuenta GRATIS¡
+    %label#label-login{:for => "log-login-show"} Aqui
+    %input#log-login-show{:name => "active-log-panel", :type => "radio"}
+  .white-panel.right-log
+    .login-show
+      .row
+        .col-md-4
+          = link_to root_path, class: 'navbar-brand logo_h' do
+            = image_tag('logo.png', class: 'brand-img')
+        .col-md-6
+          %h2 LOGIN
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .field
+          = f.email_field :email, autofocus: true, autocomplete: "email", :placeholder => "Email"
+        .field
+          = f.password_field :password, autocomplete: "current-password", :placeholder => "Password"
+        - if devise_mapping.rememberable?
+          .field
+            = f.check_box :remember_me
+            = f.label :remember_me
+        .actions
+          = f.submit "Log in"
+      %a{:href => ""} ¿Olvido su contraseña?
+    .register-show{style: "overflow-y: auto;"}
+      .row
+        .col-md-4
+          = link_to root_path, class: 'navbar-brand logo_h' do
+            = image_tag('logo.png', class: 'brand-img')
+        .col-md-6
+          %h2 REGISTER
+      .row
+        = form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'row', id: 'customer_registration' }) do |f|
+          = render "devise/shared/error_messages", resource: resource
+          .field.col-6
+            = f.text_field  :firstname, autofocus: true , :placeholder => 'Nombre Completo', :required => true
+          .field.col-6
+            = f.text_field :cellphone,  autocomplete: "cellphone", :placeholder => 'Telefono', :required => true
+          .field.col-12
+            = f.email_field :email,  autocomplete: "email", :placeholder => 'Emial', :placeholder => "Email", :required => true
+          .field.col-6
+            - if @minimum_password_length
+              %em
+                (Minimo #{@minimum_password_length} caracteres)
+            = f.password_field  :password, autocomplete: "new-password", :placeholder => 'Contraseña', :required => true
+          .field.col-6
+            = f.password_field  :password_confirmation, autocomplete: "new-password", :placeholder => 'Confirmar', :required => true
+          .actions.col-12
+            = f.submit "Registrar", id: 'submitReg'
+
+:css
+  .errorReg{
+    font-size: 15px;
+  }
+  .errorLog{
+    margin-left: 14px;
+  }
+:javascript
+
+    $(document).ready(function(){
+
+
+          $('.login-show').removeClass('show-log-panel');
+          $('.register-info-box').fadeOut();
+          $('.login-info-box').fadeIn();
+          $('.register-show').addClass('show-log-panel');
+
+          $('#label-login').click(function(){
+            $('.register-info-box').fadeOut();
+            $('.login-info-box').fadeIn();
+            $('.white-panel').addClass('right-log');
+            $('.register-show').addClass('show-log-panel');
+            $('.login-show').removeClass('show-log-panel');
+          })
+
+          $('#label-register').click(function(){
+            $('.register-info-box').fadeIn();
+            $('.login-info-box').fadeOut();
+            $('.white-panel').removeClass('right-log');
+            $('.login-show').addClass('show-log-panel');
+            $('.register-show').removeClass('show-log-panel');
+          })
+
+
+          $('#submitReg').click(function(e){
+            e.preventDefault()
+            if(defaultValidationFunction('customer_registration')){
+              $('#customer_registration').submit();
+              return true
+            }
+            return false
+          })
+    });
+
+
+
+    function defaultValidationFunction(idFrm) {
+       var inputs = document.getElementById(idFrm).querySelectorAll('input, textarea, select');
+       for (let i = 0; i < inputs.length; i++) {
+         if (!inputs[i].checkValidity()){
+            return false;
+         }
+       }
+       return true;
+    }
