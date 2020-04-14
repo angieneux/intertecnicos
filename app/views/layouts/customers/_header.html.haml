@@ -15,9 +15,7 @@
             %li.nav-item
               %a.nav-link{:href => "about.html"} ¿Cómo funciona?
             %li.nav-item
-              %a.nav-link{:href => "menu.html"} Prepara tu Menú
-            %li.nav-item
-              %a.nav-link{:href => "menu.html"} Prepara tu Menú
+              =link_to( 'Prepara tu Menú', profile_order_path, class:'nav-link') 
             %li.nav-item{style: 'display: flex;'}
               - if customer_signed_in?
                 = link_to 'Salir', destroy_customer_session_path , method: :delete , class: 'button button-lite', style: 'align-self: center; margin: 0;'
