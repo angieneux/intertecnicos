@@ -8,9 +8,9 @@
       .modal-body
         .row
           .col-md-4.text-center
-            = image_tag('banner/hero-banner1.png', width: '100%')
+            = image_tag('banner/hero-banner1.png', width: '100%', id: 'productImg')
           .col-md-8
-            %h4#exampleModalLongTitle.modal-title{style: 'margin-bottom: 30px;'} Roasted Marrow
+            %h4#titleProd.modal-title{style: 'margin-bottom: 30px;'} Roasted Marrow
             %ul.hero-info.d-none.d-lg-block{ style: "padding: 0; margin-bottom: 30px;"}
               %li
                 = image_tag('banner/health.svg', width: '30px')
@@ -28,26 +28,21 @@
 
             .row
               .col-md-6
-                %span{:style => "text-decoration:line-through;"} $ 42.000
-                %h3.price-tag{ style: "padding: 0;margin-top: 7px;display: flex;align-self: center;"} $ 32.000
+                %span#desPriceProd{:style => "text-decoration:line-through;"} $ 42.000
+                %h3#priceProd.price-tag{ style: "padding: 0;margin-top: 7px;display: flex;align-self: center;"} $ 32.000
               .col-md-6
-                %button.button.button-lite.btn-product{:type => "button", style: 'margin: 0;'} Ordenar
+                = link_to 'Ordenar', customer_signed_in? ? profile_order_path : new_customer_session_path, class: 'button button-lite btn-product', style: 'margin: 0;'
           .col-md-12{ style: "margin-top: 40px;padding-bottom: 30px;"}
             %ul#myTab.nav.nav-tabs{:role => "tablist"}
               %li.nav-item
-                %a#home-tab.nav-link.active{"aria-controls" => "home", "aria-selected" => "true", "data-toggle" => "tab", :href => "#home", :role => "tab"} Descripción
+                %a#description-tab.nav-link.active{"aria-controls" => "description", "aria-selected" => "true", "data-toggle" => "tab", :href => "#description", :role => "tab"} Descripción
               %li.nav-item
                 %a#profile-tab.nav-link{"aria-controls" => "profile", "aria-selected" => "false", "data-toggle" => "tab", :href => "#profile", :role => "tab"} Ingredientes
               %li.nav-item
                 %a#contact-tab.nav-link{"aria-controls" => "contact", "aria-selected" => "false", "data-toggle" => "tab", :href => "#contact", :role => "tab"} Información Nutricional
             #myTabContent.tab-content
-              #home.tab-pane.fade.show.active{"aria-labelledby" => "home-tab", :role => "tabpanel"}
-                Raw denim you
-                probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master
-                cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro
-                keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip
-                placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi
-                qui.
+              #description.tab-pane.fade.show.active{"aria-labelledby" => "description-tab", :role => "tabpanel"}
+
               #profile.tab-pane.fade{"aria-labelledby" => "profile-tab", :role => "tabpanel"}
                 Food truck fixie
                 locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit,
@@ -64,7 +59,8 @@
                 locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify
                 squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie
                 etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog
-                stumptown. Pitchfork sustainable tofu synth chambray yr.
+                stumptown. Pitchfork sustainable tofu synth chambray yr.        
+
 
 
 
@@ -107,3 +103,23 @@
       padding: 0 12px;
 
   }
+
+:javascript
+  $(document).ready(function(){
+
+
+    $('.product-list').on('click','.food-card',function(){
+      let id = $(this).attr('idr');
+      fetch(`/home/select/${id}`).then(function(response) {return response.json();}).then(function(res) {
+      console.log(res);
+      $('#titleProd').text(res.prod.name)
+      $('#desPriceProd').text(res.price)
+      $('#priceProd').text(res.price)
+      $('#description').text(res.prod.description)
+      $('#productImg').attr('src',res.img)
+
+      $('#exampleModalCenter').modal('show')
+      });
+    })
+
+  })

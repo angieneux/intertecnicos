@@ -84,17 +84,17 @@
         %h2 De la Semana
       .row
         - if @top_products.any?
-          .row
+          .row.product-list
             - @top_products.each do |product|
               .col-lg-4.col-sm-6
-                .media.align-items-center.food-card
+                .media.align-items-center.food-card{ idr: product.id}
                   = image_tag(product.display_image.attachment(:small), class: 'mr-3 mr-sm-4 img-responsive')
                   .media-body
                     .d-flex.justify-content-between.food-card-title
                       %h4= "#{product.name}"
                       %h3.price-tag= "#{product.display_price}"
                     %p= "#{product.description.slice(0,50)}"
-                    %a.button.button-lite{:href => "#"} Ordenar
+                    = link_to 'Ordenar', customer_signed_in? ? profile_order_path : new_customer_session_path, class: 'button button-lite'
 
   / ================Food menu section end =================
 
@@ -163,13 +163,3 @@
   / ================ start footer Area =================
   = render 'layouts/customers/modal'
   = render 'layouts/customers/footer'
-
-
-:javascript
-  $(document).ready(function(){
-
-    $('.food-card').click(function(){
-      $('#exampleModalCenter').modal('show')
-    })
-
-  })
