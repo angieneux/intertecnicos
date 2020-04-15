@@ -72,6 +72,7 @@ GEM
       activesupport (>= 3.0.0)
     choice (0.2.0)
     climate_control (0.2.0)
+    coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -187,6 +188,9 @@ GEM
       activerecord (>= 5.0)
     polyglot (0.3.5)
     popper_js (1.16.0)
+    pry (0.12.2)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
     puma (3.12.4)
     rack (2.2.2)
     rack-test (1.1.0)
@@ -389,6 +393,7 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   paper_trail (~> 10.3)
   pg
+  pry
   puma (~> 3.7)
   rails (~> 5.1.2)
   rails-erd (~> 1.6)
