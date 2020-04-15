@@ -52,80 +52,34 @@
 
       .col-sm-2
         %h2 >
-    .container
-      .row{ style: "margin-top: 30px;"}
-        .col-lg-4.col-sm-6
-          .media.align-items-center.food-card
-            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
-            .media-body
-              .d-flex.justify-content-between.food-card-title
-                %h4 Roasted Marrow
-                %h3.price-tag $32
-              %p Whales and darkness moving form cattle
-              %a.button.button-lite{:href => "#"} Ordenar
-        .col-lg-4.col-sm-6
-          .media.align-items-center.food-card
-            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
-            .media-body
-              .d-flex.justify-content-between.food-card-title
-                %h4 Roasted Marrow
-                %h3.price-tag $32
-              %p Whales and darkness moving form cattle
-              %a.button.button-lite{:href => "#"} Ordenar
-        .col-lg-4.col-sm-6
-          .media.align-items-center.food-card
-            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
-            .media-body
-              .d-flex.justify-content-between.food-card-title
-                %h4 Roasted Marrow
-                %h3.price-tag $32
-              %p Whales and darkness moving form cattle
-              %a.button.button-lite{:href => "#"} Ordenar
-        .col-lg-4.col-sm-6
-          .media.align-items-center.food-card
-            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
-            .media-body
-              .d-flex.justify-content-between.food-card-title
-                %h4 Roasted Marrow
-                %h3.price-tag $32
-              %p Whales and darkness moving form cattle
-              %a.button.button-lite{:href => "#"} Ordenar
-        .col-lg-4.col-sm-6
-          .media.align-items-center.food-card
-            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
-            .media-body
-              .d-flex.justify-content-between.food-card-title
-                %h4 Roasted Marrow
-                %h3.price-tag $32
-              %p Whales and darkness moving form cattle
-              %a.button.button-lite{:href => "#"} Ordenar
-        .col-lg-4.col-sm-6
-          .media.align-items-center.food-card
-            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
-            .media-body
-              .d-flex.justify-content-between.food-card-title
-                %h4 Roasted Marrow
-                %h3.price-tag $32
-              %p Whales and darkness moving form cattle
-              %a.button.button-lite{:href => "#"} Ordenar
-        .col-lg-4.col-sm-6
-          .media.align-items-center.food-card
-            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
-            .media-body
-              .d-flex.justify-content-between.food-card-title
-                %h4 Roasted Marrow
-                %h3.price-tag $32
-              %p Whales and darkness moving form cattle
-              %a.button.button-lite{:href => "#"} Ordenar
-        .col-lg-4.col-sm-6
-          .media.align-items-center.food-card
-            = image_tag('home/food1.png', class: 'mr-3 mr-sm-4')
-            .media-body
-              .d-flex.justify-content-between.food-card-title
-                %h4 Roasted Marrow
-                %h3.price-tag $32
-              %p Whales and darkness moving form cattle
-              %a.button.button-lite{:href => "#"} Ordenar
+
+    .container{ style: "margin-top: 30px;"}
+      .row
+        .col-sm-12
+          - if @taxonomies.any?
+            %ul.hero-info{ style: "padding: 0;display: flex;overflow-x: auto;"}
+              - @taxonomies.each do |cat|
+                %li
+                  %a{:href => "/"}
+                    = image_tag('banner/health.svg', width: '40px')
+                    %h4= cat.name
+
+    .container{ style: "margin-top: 30px;"}
+      .row
+        - if @top_products.any?
+          .row.product-list
+            - @top_products.each do |product|
+              .col-lg-4.col-sm-6
+                .media.align-items-center.food-card{ idr: product.id}
+                  = image_tag(product.display_image.attachment(:small), class: 'mr-3 mr-sm-4 img-responsive')
+                  .media-body
+                    .d-flex.justify-content-between.food-card-title
+                      %h4= "#{product.name}"
+                      %h3.price-tag= "#{product.display_price}"
+                    %p= "#{product.description.slice(0,50)}"
+                    = link_to 'Ordenar', customer_signed_in? ? profile_order_path : new_customer_session_path, class: 'button button-lite'
+
+
   / ================Featured Section End =================
 
 
@@ -212,13 +166,3 @@
   / ================ start footer Area =================
   = render 'layouts/customers/modal'
   = render 'layouts/customers/footer'
-
-
-:javascript
-  $(document).ready(function(){
-
-    $('.food-card').click(function(){
-      $('#exampleModalCenter').modal('show')
-    })
-
-  })
