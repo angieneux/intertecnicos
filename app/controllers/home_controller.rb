@@ -7,7 +7,9 @@ class HomeController < ApplicationController
 
   def select
     @selected =  Spree::Product.find(params[:id])
-    @prod = {prod: @selected ,img: @selected.display_image.attachment(:large), price: @selected.display_price}
+    @product_properties = @selected.product_properties.includes(:property)
+    @taxons = @selected.taxons
+    @prod = {prod: @selected ,taxons: @taxons, properties: @product_properties, img: @selected.display_image.attachment(:large), price: @selected.display_price}
     render json: @prod
   end
 end

@@ -8,8 +8,12 @@ Rails.application.routes.draw do
 
   get '/profile', to: 'profile#index'
   get '/profile/order', to: 'profile#order'
-  get '/home/select/:id', to: 'home#select'  
+  get '/home/select/:id', to: 'home#select'
 
+  get '/products/select/:id', to: 'spree/products#select'
+  get '/products', to: 'spree/products#index'
+
+  post '/orders/populate', to: 'spree/orders#populate'
 
   namespace :customer do
     root :to => "profile#index"
@@ -17,4 +21,12 @@ Rails.application.routes.draw do
 
 
   root 'home#index'
+end
+
+
+Spree::Core::Engine.routes.draw do
+  resources :orders, except: [:index, :new, :create, :destroy] do
+    post :populate, on: :collection
+    resources :coupon_codes, only: :create
+  end
 end

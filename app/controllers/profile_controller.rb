@@ -5,6 +5,7 @@ class ProfileController < ApplicationController
 
   def order
     @top_products = Spree::Product.last(6)
-    @taxonomies = Spree::Taxon.all()
+    @taxonomies = Spree::Taxonomy.includes(root: :children).find_by(name: 'Categories').taxons
+
   end
 end

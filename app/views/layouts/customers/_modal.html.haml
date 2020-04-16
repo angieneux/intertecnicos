@@ -16,7 +16,7 @@
                 = image_tag('banner/health.svg', width: '30px')
               %li
                 = image_tag('banner/steak.svg', width: '30px')
-            %ul{ style: "padding: 0; margin-bottom: 30px; display: flex;"}
+            %ul#taxons{ style: "padding: 0; margin-bottom: 30px; display: flex;"}
               %li
                 %a.button.button-lite.button-category.button-invert{:href => "#"} Pastas
               %li
@@ -27,11 +27,14 @@
                 %a.button.button-lite.button-category.button-invert{:href => "#"} Sin lacteos
 
             .row
-              .col-md-6
+              .col-md-4
                 %span#desPriceProd{:style => "text-decoration:line-through;"} $ 42.000
                 %h3#priceProd.price-tag{ style: "padding: 0;margin-top: 7px;display: flex;align-self: center;"} $ 32.000
+              .col-md-2{style:'display:flex;',}
+                %input#idProd{:type => "hidden",}
+                %input#quantity.form-control{:type => "number", :value => "1", :min => '1' , style: 'align-self: end;'}
               .col-md-6
-                = link_to 'Ordenar', customer_signed_in? ? profile_order_path : new_customer_session_path, class: 'button button-lite btn-product', style: 'margin: 0;'
+                = link_to 'Ordenar', customer_signed_in? ? profile_order_path : new_customer_session_path, class: 'button button-lite btn-product', style: 'margin: 0;', id: 'buttonOrder'
           .col-md-12{ style: "margin-top: 40px;padding-bottom: 30px;"}
             %ul#myTab.nav.nav-tabs{:role => "tablist"}
               %li.nav-item
@@ -44,14 +47,7 @@
               #description.tab-pane.fade.show.active{"aria-labelledby" => "description-tab", :role => "tabpanel"}
 
               #profile.tab-pane.fade{"aria-labelledby" => "profile-tab", :role => "tabpanel"}
-                Food truck fixie
-                locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit,
-                blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee.
-                Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum
-                PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS
-                salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit,
-                sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester
-                stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.
+                %ul#ingredients
               #contact.tab-pane.fade{"aria-labelledby" => "contact-tab", :role => "tabpanel"}
                 Etsy mixtape
                 wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack
@@ -59,7 +55,9 @@
                 locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify
                 squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie
                 etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog
-                stumptown. Pitchfork sustainable tofu synth chambray yr.        
+                stumptown. Pitchfork sustainable tofu synth chambray yr.
+
+
 
 
 
@@ -117,9 +115,56 @@
       $('#priceProd').text(res.price)
       $('#description').text(res.prod.description)
       $('#productImg').attr('src',res.img)
+      $('#idProd').val(res.prod.id)
+
+      if(res.properties.length >= 1){
+      let html = ''
+        $.each(res.properties, function(i, item){
+          html = `<li>${item.value}</li>`
+        })
+        $('#ingredients').html(html)
+      }
+
+      if(res.taxons.length >= 1){
+        let html = ''
+        $.each(res.taxons, function(i, item){
+          html += `<li><a class="button button-lite button-category button-invert" href="#">${item.name}</a></li>`
+        })
+        $('#taxons').html(html)
+      }
+
+
+
 
       $('#exampleModalCenter').modal('show')
       });
+    })
+
+
+
+
+    $('#buttonOrder').click(function(e){
+      if (window.location.pathname === "/profile/order") {
+        e.preventDefault()
+        $.ajax({
+          url: `/orders/populate/`,
+          type: 'POST',
+          data:{
+               "variant_id": $('#idProd').val(),
+               "quantity": $('#quantity').val(),
+               "controller": "spree/orders",
+               "action": "populate"},
+          success: function(res){
+            console.log(res)
+          },
+        })
+
+
+
+      }
+
+
+
     })
 
   })
