@@ -1,0 +1,150 @@
+= render 'layouts/customers/header'
+%body
+  %section.hero-banner
+    .hero-wrapper
+      .hero-left{style: 'padding-top: 0;'}
+      .hero-right{style: 'display:flex; align-items: end;flex-direction: column;'}
+        %h2= '$0.00'
+        %h3{style:'color: #ee0d51;'}= 'Tus Creditos'
+
+  / ================Featured Section Start =================
+  %section.mb-lg-100
+    .container
+      .section-intro.mb-75px{ style: "max-width: 100%"}
+        %h4.intro-title Recarga tus creditos
+        %h2 Recibe nuestras mejores ofertas
+      .row{ style: "text-align: center;"}
+        .col-md-3.col-sm-12
+          .food-card.priceSecction
+            .header
+              =image_tag("banner/selectFood.svg", width: "30%", )
+            .body{ style: 'margin-top: 20px;'}
+              %h4= '$40.000'
+              %p= 'puedes pedir de 17 a 23 platos'
+              %button.button.button-lite= 'Seleccionar'
+        .col-md-3.col-sm-12
+          .food-card.priceSecction
+            .header
+              =image_tag("banner/addressfood.svg", width: "30%", )
+            .body{ style: 'margin-top: 20px;'}
+              %h4= '$120.000'
+              %p= 'puedes pedir de 30 a 50 platos'
+              %button.button.button-lite= 'Seleccionar'
+        .col-md-3.col-sm-12
+          .food-card.priceSecction
+            .header
+              =image_tag("banner/buyFood.svg", width: "30%", )
+            .body{ style: 'margin-top: 20px;'}
+              %h4= '$300.000'
+              %p= 'puedes pedir de 70 a 100 platos'
+              %button.button.button-lite= 'Seleccionar'
+        .col-md-3.col-sm-12
+          .food-card.priceSecction
+            .header
+              =image_tag("banner/buyFood.svg", width: "30%", )
+            .body{ style: 'margin-top: 20px;'}
+              .input-group
+                %span.inp-acom.input-group-addon $
+                %input#quantity.form-control.input-decide{:type => "number", :value => "15.000", :min => '15.000' , style: 'align-self: end;'}              
+              %p= 'Escoje el monto que deseas recargar'
+              %button.button.button-lite= 'Seleccionar'
+    .container{style: "padding: 30px 0;"}
+      .row
+        .col-md.12.text-center
+          %button.button= 'Continuar'
+    .container
+      .section-intro.mb-75px{ style: "max-width: 100%"}
+        %h4.intro-title Siempre a tu alcance
+      .row
+        .col-md.12
+          .owl-carousel
+            .item
+              = image_tag('payment/visa-logo.png', class: 'img-responsive-suma')
+            .item
+              = image_tag('payment/master.png', class: 'img-responsive-suma')
+            .item
+              = image_tag('payment/american.png', class: 'img-responsive-suma')
+            .item
+              = image_tag('payment/pse.png', class: 'img-responsive-suma')
+            .item
+              = image_tag('payment/baloto.png', class: 'img-responsive-suma')
+  / ================Featured Section End =================
+
+  %section.mb-lg-100
+    .container
+      .section-intro.mb-75px{ style: "max-width: 100%"}
+        %h2 Preguntas Frecuentes
+      .row
+        .col-md-12
+          %details.details
+            %summary= '¿Cuándo recibiré mis platos?'
+            %p= 'Tus platos serán entregados los días que los escogas de Lunes a Viernes, entre las 9am y las 12m. Tu mensajero te contactará al llegar a tu dirección. Si pides después de las 7:30am tu pedido podrá llegar lasta las 12:30m.'
+          %details.details
+            %summary= '¿Debo consumir todos los días?'
+            %p= '¡Tu escoges! Kucina te permite seleccionar qué días quieres recibir tus almuerzos. La mayoría de nuestros usuarios consumen más de 3 veces a la semana.'
+          %details.details
+            %summary= '¿Qué vencimiento tienen los créditos?'
+            %p= 'No te preocupes, tienes todo un año para consumirlos.'
+= render 'layouts/customers/footer'
+
+:css
+  .img-responsive-suma{
+    max-width: 120px;
+  }
+
+  .details{
+    border-bottom: solid 1px #ee0d51;
+    padding: 10px 15px;
+    border-radius: 50px;
+    margin-bottom: 20px;
+  }
+
+  .details p{
+    background: #fff8f7;
+    padding: 10px 14px;
+    border-radius: 50px;
+  }
+
+  .food-card-active {
+      background: #fff;
+      box-shadow: 0px 10px 20px 0px rgba(8, 6, 89, 0.1);
+  }
+
+  .input-decide{
+    border: none;
+    background: #fff8f7;
+    font-family: "Josefin Sans", sans-serif;
+    color: #2f2d4e;
+    line-height: 1.2;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: end;
+  }
+
+
+  .inp-acom{
+    font-family: "Josefin Sans", sans-serif;
+    color: #2f2d4e;
+    line-height: 1.2;
+    font-size: 24px;
+    font-weight: 600;
+    align-self: center;
+  }
+
+
+:javascript
+
+  $('document').ready(function(){
+    $('.priceSecction').click(function(){
+      $('.priceSecction').removeClass('food-card-active')
+      $(this).addClass('food-card-active')
+    })
+  })
+
+  $('.owl-carousel').owlCarousel({
+      items:4,
+      loop:true,
+      autoplay:true,
+      autoplayTimeout:1000,
+      autoplayHoverPause:true
+  })

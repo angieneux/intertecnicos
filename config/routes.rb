@@ -15,6 +15,10 @@ Rails.application.routes.draw do
 
   post '/orders/populate', to: 'spree/orders#populate'
 
+  get '/credits', to: 'credits#index'
+
+
+
   namespace :customer do
     root :to => "profile#index"
   end
