@@ -21656,19 +21656,13 @@ a:hover {
     content: "";
     opacity: 1;
     background: #6062ff;
-    background: #6062ff;
-    background: #6062ff;
-    background: #6062ff;
-    background: #6062ff;
-    background: #6062ff;
-    background: #6062ff;
 }
 
 .custom-btn.custom-btn--style-1:focus,
 .custom-btn.custom-btn--style-1:hover {
     background-color: #fff;
-    border-color: #6062ff;
-    color: #6062ff;
+    border-color: #008EB2;
+    color: #008EB2;
 }
 
 .custom-btn.custom-btn--style-1:focus:before,
@@ -21706,8 +21700,8 @@ a:hover {
 
 .custom-btn.custom-btn--style-3 {
     background-color: #fff;
-    border-color: #6062ff;
-    color: #6062ff
+    border-color: #008EB2;
+    color: #008EB2
 }
 
 .custom-btn.custom-btn--style-3:before {
@@ -22297,24 +22291,18 @@ main::-moz-selection {
 
 .custom-btn.custom-btn--style-1:before,
 .custom-btn.custom-btn--style-2:before,
-.custom-btn.custom-btn--style-3:before {
-    background: #6062ff;
-    background: #6062ff;
-    background: #6062ff;
-    background: #6062ff;
-    background: #6062ff;
-    background: #6062ff;
-    background: #6062ff;
+.custom-btn.custom-btn--style-3:before {    
+    background: #009B8E;
 }
 
 .custom-btn.custom-btn--style-2 {
     background-color: #fbece8;
     border-color: #fbece8;
-    color: #6062ff
+    color: #008EB2
 }
 
 .custom-btn.custom-btn--style-3 {
-    border-color: #6062ff
+    border-color: #008EB2
 }
 
 #btn-to-top-wrap #btn-to-top {
