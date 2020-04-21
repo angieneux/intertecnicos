@@ -676,7 +676,7 @@ input#coupon_code {
 }
 
 .nt_section_158099 {
-  background: linear-gradient(90deg, #f63068 0%, #fa6e3d 100%);
+  background-image: linear-gradient(to right top, #2dae2f, #00a77c, #0099b8, #0085d4, #0069c6);
 }
 
 .product.t-left:hover p.paragraph,
