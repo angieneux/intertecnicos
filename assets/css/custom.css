@@ -849,11 +849,16 @@ a.added_to_cart:hover {
   padding: 12px 0;
   justify-content: space-between;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
+.tabs-services li {
+  margin-bottom: 14px;
+}
 .tabs-services li a{
   color: #fff;
   text-decoration: none;
+
 }
 
 .tabs-services li a.activeTabL{

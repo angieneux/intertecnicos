@@ -20656,7 +20656,7 @@ h1 {
 
 .h2,
 h2 {
-    font-size: 3.5rem
+    font-size: 3.1rem
 }
 
 .h3,
@@ -26736,7 +26736,7 @@ img {
     font-size: 4rem;
     font-weight: 700;
     font-family: Quicksand, sans-serif;
-    color: #056eb9;
+    color: #0069C6;
     -webkit-border-radius: 50%;
     border-radius: 50%;
     -webkit-user-select: none;
@@ -26756,7 +26756,7 @@ img {
     right: -10px;
     width: 40px;
     height: 40px;
-    background-color: #6062ff;
+    background-color: #009E5D;
     line-height: 40px;
     font-size: 1.8rem;
     color: #fff;
