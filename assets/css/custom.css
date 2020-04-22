@@ -1,3 +1,26 @@
+@font-face {
+  font-family: Quicksand-Regular;
+  src: url(../fonts/Quicksand-Regular.ttf);    
+}
+@font-face {
+  font-family: Quicksand-Bold;
+  src: url(../fonts/Quicksand-Bold.ttf);    
+}
+@font-face {
+  font-family: Quicksand-Medium;
+  src: url(../fonts/Quicksand-Medium.ttf);    
+}
+@font-face {
+  font-family: Quicksand-Variable;
+  src: url(../fonts/Quicksand-VariableFont_wght.ttf);    
+}
+
+
+
+
+
+
+
 .vc_custom_1559092219520 {
   background-color: #f9fbfc !important
 }
@@ -6,8 +29,9 @@
   padding-bottom: 100px !important
 }
 
-p, span {
-  font-family: Rubik, sans-serif !important;
+p {
+  font-family: Quicksand-Variable, sans-serif !important;
+  font-size: 1.7rem;
 }
 
 .vc_custom_1560952011690 {
