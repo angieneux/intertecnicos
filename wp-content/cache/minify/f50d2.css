@@ -21658,7 +21658,7 @@ a:hover {
 .custom-btn.custom-btn--style-1:before {
     content: "";
     opacity: 1;
-    background: #6062ff;
+    background: #007DC6;
 }
 
 .custom-btn.custom-btn--style-1:focus,
@@ -30453,13 +30453,13 @@ i.fa-7x {
 .color-style-1 .js-contact-form .custom-btn.custom-btn--style-1,
 .color-style-1 .authorization__form .custom-btn.custom-btn--style-1 {
     border: none;
-    background: #6062ff;
-    background: #6062ff;
-    background: #6062ff;
-    background: #6062ff;
-    background: #6062ff;
-    background: #6062ff;
-    background: #6062ff;
+    background: #007DC6;
+    background: #007DC6;
+    background: #007DC6;
+    background: #007DC6;
+    background: #007DC6;
+    background: #007DC6;
+    background: #007DC6;
     -webkit-transition: none;
     -o-transition: none;
     transition: none
@@ -30516,13 +30516,13 @@ i.fa-7x {
 .color-style-5 .form--horizontal .custom-btn.custom-btn--style-1,
 .color-style-5 .js-contact-form .custom-btn.custom-btn--style-1,
 .color-style-5 .authorization__form .custom-btn.custom-btn--style-1 {
-    background: #6062ff;
-    background: #6062ff;
-    background: #6062ff;
-    background: #6062ff;
-    background: #6062ff;
-    background: #6062ff;
-    background: #6062ff;
+    background: #007DC6;
+    background: #007DC6;
+    background: #007DC6;
+    background: #007DC6;
+    background: #007DC6;
+    background: #007DC6;
+    background: #007DC6;
     -webkit-transition: none;
     -o-transition: none;
     transition: none
@@ -30551,7 +30551,7 @@ i.fa-7x {
     background-image: none;
     background: #fff;
     border: solid 2px;
-    color: #6062ff;
+    color: #007DC6;
 }
 
 .start-screen--style-10 .js-slick .custom-btn.custom-btn--style-3 {
