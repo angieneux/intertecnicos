@@ -36,6 +36,14 @@
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init("user_JihHQvk8CoDaJ8e0xdYja");
+    })();
+    </script>
+
 </head>
 
 <body
@@ -774,7 +782,7 @@
                                 </ul>
                                 <div role="form" class="wpcf7" id="wpcf7-f563-p1468-o1" lang="en-US" dir="ltr">
                                     <div class="screen-reader-response"></div>
-                                    <form action="#"
+                                    <form action="#" id="frmSm"
                                         method="post" class="wpcf7-form" novalidate="novalidate">
                                         <div style="display: none;">
                                             <input type="hidden" name="_wpcf7" value="563">
@@ -787,31 +795,31 @@
                                                     name="text-74" value="" size="40"
                                                     class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required textfield textfield--grey"
                                                     aria-required="true" aria-invalid="false"
-                                                    placeholder="Compañía"></span></div>
+                                                    placeholder="Compañía" id="compInp"></span></div>
                                         <div class="input-wrp">
                                             <span class="wpcf7-form-control-wrap text-74"><input type="text"
                                                     name="text-74" value="" size="40"
                                                     class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required textfield textfield--grey"
                                                     aria-required="true" aria-invalid="false"
-                                                    placeholder="Nombre completo"></span></div>
+                                                    placeholder="Nombre completo" id="nomInp"></span></div>
                                         <div class="input-wrp">
                                             <span class="wpcf7-form-control-wrap email-362"><input type="email"
                                                     name="email-362" value="" size="40"
                                                     class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email textfield textfield--grey"
                                                     aria-required="true" aria-invalid="false"
-                                                    placeholder="Email  corporativo"></span></div>
+                                                    placeholder="Email  corporativo" id="emailInp"></span></div>
                                         <div class="input-wrp">
                                             <span class="wpcf7-form-control-wrap text-74"><input type="text"
                                                     name="text-74" value="" size="40"
                                                     class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required textfield textfield--grey"
                                                     aria-required="true" aria-invalid="false"
-                                                    placeholder="Número de celular."></span></div>
+                                                    placeholder="Número de celular." id="phoneInp"></span></div>
                                         <div class="input-wrp">
                                             <span class="wpcf7-form-control-wrap text-74"><input type="text"
                                                     name="text-74" value="" size="40"
                                                     class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required textfield textfield--grey"
                                                     aria-required="true" aria-invalid="false"
-                                                    placeholder="¿Cómo te podemos ayudar?"></span></div>
+                                                    placeholder="¿Cómo te podemos ayudar?" id="messInp"></span></div>
                                         <p><input type="submit" value="Enviar"
                                                 class="wpcf7-form-control wpcf7-submit custom-btn custom-btn--medium custom-btn--style-1 wide"><span
                                                 class="ajax-loader"></span></p>
@@ -921,6 +929,9 @@
     <script src=./wp-content/cache/minify/61132.js type="059aa94b150e7e2ac5e980ec-text/javascript"></script>
     <script src=./wp-content/cache/minify/bed60.js type="059aa94b150e7e2ac5e980ec-text/javascript"></script>
 
+
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script> 
     <script>
         var TxtRotate = function (el, toRotate, period) {
             this.toRotate = toRotate;
@@ -1023,18 +1034,48 @@
 
 
           $('.tabs-services').on('click', 'a', function(e){
-            e.preventDefault()
-            let idr = $(this).attr('idr')
-            $('.service-box').fadeOut()
-            $('.tabs-services li a').removeClass('activeTabL')
-            $(this).addClass('activeTabL')
+                    e.preventDefault()
+                    let idr = $(this).attr('idr')
+                    $('.service-box').fadeOut()
+                    $('.tabs-services li a').removeClass('activeTabL')
+                    $(this).addClass('activeTabL')
 
-            $(`#${idr}`).fadeIn()                    
-          } )
-      })
+                    $(`#${idr}`).fadeIn()                    
+                } )
+            })
 
 
 
+            $('#frmSm').submit(function(e){
+                e.preventDefault()
+
+
+                
+
+                var data = {
+                    service_id: 'smtp_server',
+                    template_id: 'template_AHHlzOkW',
+                    user_id: 'user_JihHQvk8CoDaJ8e0xdYja',
+                    template_params: {
+                        "from_name": $('#nomInp').val(),
+                            "compain": $('#compInp').val(),
+                            "phone": $('#phoneInp').val(),
+                            "from_email": $('#emailInp').val(),
+                            "message_html": $('#messInp').val()                    
+                    }
+
+                };
+                
+                $.ajax('https://api.emailjs.com/api/v1.0/email/send', {
+                    type: 'POST',
+                    data: JSON.stringify(data),
+                    contentType: 'application/json'
+                }).done(function() {
+                    alert('Tu mensaje ha sido entregado');
+                }).fail(function(error) {
+                    alert('Oops... ' + JSON.stringify(error));
+                });
+            })
 
 
         function goTo(id){
