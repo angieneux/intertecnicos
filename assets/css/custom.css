@@ -16,7 +16,19 @@
 }
 
 
+.imageDescription {
 
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+
+}
+
+.imgService {
+
+  border-radius: 7px;
+
+}
 
 
 
