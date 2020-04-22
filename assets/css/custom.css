@@ -35,6 +35,15 @@
 }
 
 
+.img-item.item {
+
+  
+  max-width: 90%;
+  align-self: center;
+  border-radius: 7px;
+
+}
+
 
 .vc_custom_1559092219520 {
   background-color: #f9fbfc !important

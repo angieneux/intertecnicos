@@ -166,10 +166,7 @@
                                     <div class=start-screen__bg
                                         style="background-image: url(./wp-content/uploads/2019/05/bg_1-2.jpg);background-position: left top;">
                                     </div>
-                                </div>
-                                <div class="start-screen__shapes d-none d-lg-block"><img
-                                        src="./assets/img/media-tension.jpg" class=img-shape
-                                        alt=shape_1-5.png></div>
+                                </div>                                
                                 <div class=start-screen__content-container>
                                     <div class="start-screen__content__item align-items-center">
                                         <div class=container>
@@ -190,6 +187,15 @@
                                                     <div class="spacer py-2 py-sm-4"></div>
                                                     <a class="custom-btn custom-btn--big custom-btn--style-1"
                                                         href="javascript:goTo('services')">Saber mas</a>
+                                                </div>
+                                                <div class="col-12 col-md-10 col-lg-6">
+                                                    <div class="owl-carousel owl-inicio" style="margin-left: 30px;">
+                                                        <img src="./assets/img/media-tension.jpg" class="img-item item" alt=shape_1-5.png>
+                                                        <img src="./assets/img/5.5.jpg" class="img-item item" alt=shape_1-5.png>
+                                                        <img src="./assets/img/1.jpg" class="img-item item" alt=shape_1-5.png>
+                                                        <img src="./assets/img/7.jpg" class="img-item item" alt=shape_1-5.png>
+                                                        <img src="./assets/img/8.jpg" class="img-item item" alt=shape_1-5.png>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -295,7 +301,7 @@
                     </div>
                     <div class="nt-column col-sm-12 col-md-6 col-12">
                         <div class="review review--s3 review--slider">
-                            <div class="owl-carousel" style="padding-top: 76px;">
+                            <div class="owl-carousel owl-services" style="padding-top: 76px;">
                                 <div class="item review__item review__item--rounded review__item--shadow">
                                     <div class=d-table>                                        
                                         <div class="d-table-cell align-middle"><span
@@ -347,7 +353,7 @@
                     </div>
                     <div class="nt-column col-sm-12 col-md-6 col-12">
                         <div class="review review--s3 review--slider">
-                            <div class="owl-carousel" style="padding-top: 76px;">
+                            <div class="owl-carousel owl-services" style="padding-top: 76px;">
                                 <div class="item review__item review__item--rounded review__item--shadow">
                                     <div class=d-table>                                        
                                         <div class="d-table-cell align-middle"><span
@@ -412,7 +418,7 @@
                     </div>
                     <div class="nt-column col-sm-12 col-md-6 col-12">
                         <div class="review review--s3 review--slider">
-                            <div class="owl-carousel" style="padding-top: 76px;">
+                            <div class="owl-carousel owl-services" style="padding-top: 76px;">
                                 <div class="item review__item review__item--rounded review__item--shadow">
                                     <div class=d-table>                                        
                                         <div class="d-table-cell align-middle"><span
@@ -477,7 +483,7 @@
                     </div>
                     <div class="nt-column col-sm-12 col-md-6 col-12">
                         <div class="review review--s3 review--slider">
-                            <div class="owl-carousel" style="padding-top: 76px;">
+                            <div class="owl-carousel owl-services" style="padding-top: 76px;">
                                 <div class="item review__item review__item--rounded review__item--shadow">
                                     <div class=d-table>                                        
                                         <div class="d-table-cell align-middle"><span
@@ -969,7 +975,8 @@
     <script src="assets/js/owlcarousel/owl.carousel.js"></script>
     <script>
       $(document).ready(function(){
-          $('.owl-carousel').owlCarousel({
+
+          $('.owl-services').owlCarousel({
               margin: 10,
               autoplay: true,
               autoplayTimeout: 2000,
@@ -988,21 +995,34 @@
               }
           });
 
+          $('.owl-inicio').owlCarousel({              
+              autoplay: true,
+              autoplayTimeout: 2000,
+              autoplayHoverPause: true,
+              loop: true,
+              responsive: {
+                  0: {
+                      items: 1
+                  },
+                  600: {
+                      items: 1
+                  },
+                  1000: {
+                      items: 1
+                  }
+              }
+          });
+
 
 
           $('.tabs-services').on('click', 'a', function(e){
             e.preventDefault()
             let idr = $(this).attr('idr')
+            $('.service-box').fadeOut()
             $('.tabs-services li a').removeClass('activeTabL')
             $(this).addClass('activeTabL')
 
-            $('.service-box').fadeOut()
-            $(`#${idr}`).fadeIn()
-
-            console.log('============================MAMAREE=====================')
-            console.log($(this));
-            console.log('============================MAMAREE=====================')
-            
+            $(`#${idr}`).fadeIn()                    
           } )
       })
 
