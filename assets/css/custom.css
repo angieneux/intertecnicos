@@ -45,6 +45,7 @@
 }
 
 
+
 .vc_custom_1559092219520 {
   background-color: #f9fbfc !important
 }
@@ -872,6 +873,15 @@ a.added_to_cart:hover {
     font-size:18px;
 }
 
+  .start-screen__content__item{
+    padding-top: 14px !important;
+  }
+
+    .owl-inicio{
+      margin-left: 0 !important;
+      margin-top: 23px;
+    }
+
 
 }
 
@@ -913,6 +923,7 @@ a.added_to_cart:hover {
 
 .tabs-services li {
   margin-bottom: 14px;
+  padding: 6px;
 }
 .tabs-services li a{
   color: #fff;
