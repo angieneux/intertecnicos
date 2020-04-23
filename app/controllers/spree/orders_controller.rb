@@ -46,6 +46,8 @@ module Spree
         flash[:error] = t('spree.cannot_edit_orders')
         redirect_to cart_path
       end
+
+   
     end
 
     # Adds a new item to the order (creating a new order if none already exists)
@@ -73,7 +75,7 @@ module Spree
             flash[:error] = @order.errors.full_messages.join(", ")
             redirect_back_or_default(spree.root_path)
             return
-          else          
+          else
             redirect_to cart_path
           end
         end
